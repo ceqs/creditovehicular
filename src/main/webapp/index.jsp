@@ -25,36 +25,49 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     </head>
     <body style = "margin-left: 80px; margin-right:80px;">
-        <h1>Credito Vehicular</h1>
-        <form>
-          <fieldset>
-            <div class="form-group">
-              <label for="disabledSelect">Moneda</label>
-              <select id="disabledSelect" class="form-control">
-                <option>Soles</option>
-                <option>Dolares</option>
-              </select>
-            </div>
-            <div class="form-group">  
-                <label for="customRange2" class="form-label">Monto de prestamo</label>
-                <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
-            </div>
-            <div class="form-group">  
-                <label for="customRange2" class="form-label">Monto asegurado</label>
-                <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
-            </div>
-            <div class="form-group">  
-                <label for="customRange2" class="form-label">Plazo en meses</label>
-                <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-              <label class="form-check-label" for="disabledFieldsetCheck">
-                Can't check this
-              </label>
-            </div>
+        <h1>Credito Vehicular</h1>        
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Tipo de Auto:</label>
+            <select id="inputState" class="form-select">
+              <option selected>Nuevo</option>
+              <option>Usado</option>
+              <option>Taxi</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Moneda:</label>
+            <select id="inputState" class="form-select">
+              <option selected>Soles</option>
+              <option>Dolares</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="customRange2" class="form-label">Valor del Auto:</label>
+            <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
+          </div>
+          <div class="col-md-6">
+            <label for="customRange2" class="form-label">Cuota Inicial:</label>
+            <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
+          </div>
+          <div class="col-md-6">
+            <label for="customRange2" class="form-label">Plazo:</label>
+            <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
+          </div>
+          <div class="col-md-6">
+            <label for="customRange2" class="form-label">Ingresos:</label>
+            <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Ubicación:</label>
+            <select id="inputState" class="form-select">
+              <option selected>Lima</option>
+              <option>Provincias</option>
+            </select>
+          </div>
+          <div class="col-12">
             <button type="submit" class="btn btn-primary">Calcular</button>
-          </fieldset>
+          </div>
         </form>
     </body>
 </html>
