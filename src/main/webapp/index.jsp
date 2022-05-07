@@ -26,7 +26,7 @@
     </head>
     <body style = "margin-left: 80px; margin-right:80px;">
         <h1>Credito Vehicular</h1>        
-        <form class="row g-3">
+        <form class="row g-3" method="post" action="corrida.jsp">
           <div class="col-md-6">
             <label for="inputState" class="form-label">Tipo de Auto:</label>
             <select id="inputState" class="form-select">
@@ -43,20 +43,20 @@
             </select>
           </div>
           <div class="col-md-6">
-            <label for="customRange2" class="form-label">Valor del Auto:</label>
-            <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
+            <label for="customRange2" class="form-label">Valor del Auto:&nbsp;<input type="text" id="value_valor" value="S/. 30000"></label>
+            <input type="range" class="form-range" min="3000" max="200000" step="1000" value="30000" id="customRange2" onchange="changeValorValue(this.value);">
           </div>
           <div class="col-md-6">
-            <label for="customRange2" class="form-label">Cuota Inicial:</label>
-            <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
+            <label for="range_cuota" class="form-label">Cuota Inicial:&nbsp;<input type="text" id="value_cuota" value="20%"></label>
+            <input type="range" class="form-range" min="0" max="100" step="1" id="range_cuota" value="20" onchange="changeCuotaValue(this.value);">
           </div>
           <div class="col-md-6">
-            <label for="customRange2" class="form-label">Plazo:</label>
-            <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
+              <label for="range_plazo" class="form-label">Plazo:&nbsp;<input type="text" id="value_plazo" value="12 meses"></label>
+              <input id="range_plazo" type="range" class="form-range" min="3" max="60" step="1" value="12" onchange="changePlazoValue(this.value);">
           </div>
           <div class="col-md-6">
-            <label for="customRange2" class="form-label">Ingresos:</label>
-            <input type="range" class="form-range" min="3000" max="200000" step="1000" id="customRange2">
+            <label for="customRange2" class="form-label">Ingresos:&nbsp;<input type="text" id="value_ingresos" value="S/. 4000"></label>
+            <input type="range" class="form-range" min="500" max="200000" step="100" value="4000" id="customRange2" onchange="changeIngresosValue(this.value);">
           </div>
           <div class="col-md-6">
             <label for="inputState" class="form-label">Ubicación:</label>
@@ -69,5 +69,22 @@
             <button type="submit" class="btn btn-primary">Calcular</button>
           </div>
         </form>
+        <script type="text/javascript">
+            function changePlazoValue(val) {
+                document.getElementById("value_plazo").value = val + " meses";
+            }
+            
+            function changeCuotaValue(val) {
+                document.getElementById("value_cuota").value = val + "%";
+            }
+            
+            function changeValorValue(val) {
+                document.getElementById("value_valor").value = "S/. " + val;
+            }
+            
+            function changeIngresosValue(val) {
+                document.getElementById("value_ingresos").value = "S/. " + val;
+            }
+        </script>
     </body>
 </html>
