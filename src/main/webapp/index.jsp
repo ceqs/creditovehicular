@@ -26,7 +26,7 @@
         
         <link href="css/estilos.css" rel="stylesheet">
     </head>
-    <body style = "margin-left: 80px; margin-right:80px;">        
+    <body>
         <header>
             <div class="row mx-md-0">
                 <div class="col-12 pr-0">
@@ -55,9 +55,25 @@
                         <img id="peru-ciudad" src="images/peru_ciudad.svg" alt="UTP">
                     </div>
                     <div class="col-12 col-md-12 text-center d-none d-md-flex pt-5">
-                        <div class="banda_aseguradoras row">
+                        <div class="banda_formulas row">
                             <div class="col logo_banda">
-                                <img src="images/formulas/formula1.png" alt="Formula 1">
+                                 <img src="images/formulas/tem.svg" alt="TEM">
+                             </div>
+                             <div class="col logo_banda">
+                                 <img src="images/formulas/tcem.svg" alt="TCEM">
+                             </div>
+                             <div class="col logo_banda">
+                                 <img src="images/formulas/tcea.svg" alt="TCEA">
+                             </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 text-center d-none d-md-flex pt-5">
+                        <div class="banda_formulas row">
+                            <div class="col logo_banda">
+                                <img src="images/formulas/interes.svg" alt="INTERES">
+                            </div>
+                            <div class="col logo_banda">
+                                <img src="images/formulas/cuota.svg" alt="CUOTAS">
                             </div>
                         </div>
                     </div>
@@ -86,6 +102,7 @@
                                         <option value="T">Taxi</option>
                                     </select>
                                 </div>
+                                
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Valor del Auto:</span></div>
                                     <div>
@@ -93,6 +110,7 @@
                                     </div>
                                     <input id="r_valor_auto" name="r_valor_auto" type="range" class="form-range col-12 col-md-8" required="" min="3000" max="200000" step="1000" value="30000" onchange="changeValorValue(this.value);">
                                 </div>
+                                
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Plazo:</span></div>
                                     <div>
@@ -100,12 +118,21 @@
                                     </div>
                                     <input id="r_valor_plazo" name="r_valor_plazo" type="range" class="form-range col-12 col-md-8" required="" min="3" max="60" step="1" value="12" onchange="changePlazoValue(this.value);">
                                 </div>
+                                
                                 <div class="col-12 row form-group">
-                                    <div class="label"><span class="form-label">Ubicación:</span></div>
-                                    <select id="ubicacion" name="ubicacion" class="form-select col-12 col-md-8" required="">
-                                        <option value="L" selected>Lima</option>
-                                        <option value="P">Provincias</option>
-                                    </select>
+                                    <div class="label"><span class="form-label">TEA:</span></div>
+                                    <div class="input-group mb-3">
+                                        <input id="tea" name="tea" type="number" class="form-control col-12 col-md-8" required="" min="1.00" max="100.00" step="0.01" value="7.00">
+                                        <span class="input-group-text">%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Seguro desgravamen:</span></div>
+                                    <div class="input-group mb-3">
+                                        <input id="desgravamen" name="desgravamen" type="number" class="form-control col-12 col-md-8" required="" min="0.01" max="10.00" value="0.05">
+                                        <span class="input-group-text">%</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -139,6 +166,22 @@
                                     </div>
                                     <input id="r_valor_ingresos" name="r_valor_ingresos" type="range" class="form-range col-12 col-md-8" required="" min="500" max="200000" step="100" value="4000" onchange="changeIngresosValue(this.value);">
                                 </div>
+                                
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Comisión</span></div>
+                                    <div class="input-group mb-3">
+                                        <input id="comision" name="comision" type="number" class="form-control col-12 col-md-8" required="" min="1.00" max="100.00" value="4.00">
+                                        <span class="input-group-text">#</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Ubicación:</span></div>
+                                    <select id="ubicacion" name="ubicacion" class="form-select col-12 col-md-8" required="">
+                                        <option value="L" selected>Lima</option>
+                                        <option value="P">Provincias</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
@@ -153,9 +196,26 @@
                 </div>
 
                 <div class="col-12 col-md-12 text-center d-flex d-md-none pt-4">
-                    <div class="banda_aseguradoras row">
+                    <div class="banda_formulas row">
                         <div class="col logo_banda">
-                            <img src="images/formulas/formula1.png" alt="Formula 1">
+                             <img src="images/formulas/tem.svg" alt="TEM">
+                         </div>
+                         <div class="col logo_banda">
+                             <img src="images/formulas/tcem.svg" alt="TCEM">
+                         </div>
+                         <div class="col logo_banda">
+                             <img src="images/formulas/tcea.svg" alt="TCEA">
+                         </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-12 text-center d-flex d-md-none pt-4">
+                    <div class="banda_formulas row">
+                        <div class="col logo_banda">
+                            <img src="images/formulas/interes.svg" alt="INTERES">
+                        </div>
+                        <div class="col logo_banda">
+                            <img src="images/formulas/cuota.svg" alt="CUOTAS">
                         </div>
                     </div>
                 </div>
@@ -163,6 +223,32 @@
             </div>
             <div class="overlay"></div>
         </div>
+        
+        <footer class="row mx-md-0">
+            <div class="col-md-12">
+                <div class="container pt-5 pb-3 px-md-5">
+                    <div class="row">
+                        <span>Integrantes:</span>
+                        <ul>
+                            <li><b>U20101684</b> - Quispe Salazar, Carlos Enrique</li>
+                            <li><b>U20100058</b> - Schenone Sifuentes, Marco Antonio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 aux-divider mt-0 mb-4"></div>
+
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <img id="icon-ss-footer" src="images/logo_utp.png" alt="www.utp.edu.pe">
+                        <p><span>Curso Integrador I: Sistemas - Software(9014)</span> | <br class="d-block d-md-none"><span>Prof. RAÚL ARMANDO JIMÉNEZ DRAGO</span></p>
+                        <p><span>Todos los derechos reservados</span></p>                        
+                    </div>
+                </div>
+            </div>
+        </footer>
         
         <script type="text/javascript">
             function changePlazoValue(val) {
