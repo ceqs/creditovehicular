@@ -23,67 +23,162 @@
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        
+        <link href="css/estilos.css" rel="stylesheet">
     </head>
-    <body style = "margin-left: 80px; margin-right:80px;">
-        <h1>Credito Vehicular</h1>        
-        <form class="row g-3" method="post" action="corrida.jsp">
-          <div class="col-md-6">
-            <label for="inputState" class="form-label">Tipo de Auto:</label>
-            <select id="inputState" class="form-select">
-              <option selected>Nuevo</option>
-              <option>Usado</option>
-              <option>Taxi</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="inputState" class="form-label">Moneda:</label>
-            <select id="inputState" class="form-select">
-              <option selected>Soles</option>
-              <option>Dolares</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="customRange2" class="form-label">Valor del Auto:&nbsp;<input type="text" id="value_valor" value="S/. 30000"></label>
-            <input type="range" class="form-range" min="3000" max="200000" step="1000" value="30000" id="customRange2" onchange="changeValorValue(this.value);">
-          </div>
-          <div class="col-md-6">
-            <label for="range_cuota" class="form-label">Cuota Inicial:&nbsp;<input type="text" id="value_cuota" value="20%"></label>
-            <input type="range" class="form-range" min="0" max="100" step="1" id="range_cuota" value="20" onchange="changeCuotaValue(this.value);">
-          </div>
-          <div class="col-md-6">
-              <label for="range_plazo" class="form-label">Plazo:&nbsp;<input type="text" id="value_plazo" value="12 meses"></label>
-              <input id="range_plazo" type="range" class="form-range" min="3" max="60" step="1" value="12" onchange="changePlazoValue(this.value);">
-          </div>
-          <div class="col-md-6">
-            <label for="customRange2" class="form-label">Ingresos:&nbsp;<input type="text" id="value_ingresos" value="S/. 4000"></label>
-            <input type="range" class="form-range" min="500" max="200000" step="100" value="4000" id="customRange2" onchange="changeIngresosValue(this.value);">
-          </div>
-          <div class="col-md-6">
-            <label for="inputState" class="form-label">Ubicación:</label>
-            <select id="inputState" class="form-select">
-              <option selected>Lima</option>
-              <option>Provincias</option>
-            </select>
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">Calcular</button>
-          </div>
-        </form>
+    <body style = "margin-left: 80px; margin-right:80px;">        
+        <header>
+            <div class="row mx-md-0">
+                <div class="col-12 pr-0">
+                    <nav class="navbar navbar-expand-lg navbar-light pr-0">
+                        <a class="navbar-brand" href="#">
+                            
+                            <img id="logo-ss-header" src="images/utp-logo.svg" class="d-inline-block ml-4" alt="Aplicación">
+                            <img id="logo-ss-header-contraste" src="images/utp-logo.svg" class="ml-4 d-none" alt="Aplicación">
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </header>    
+        
+        <div id="top-section" class="row position-relative pb-0 pb-md-4 mx-md-0">
+            <div id="top-left-section" class="col-12 col-md-6 d-flex">
+                <div class="row px-3 pl-md-5 pr-md-5">
+                    <div class="col-12 mt-3 text-center text-md-left">
+                        <h1 class="aux-texto-azul">Calcula tu crédito vehicular y obten toda la información sobre el calculo de cuotas</h1>
+                    </div>
+                    <div class="col-12 text-center text-md-left">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <div class="d-none d-md-block col-md-12 text-center align-self-end">
+                        <img id="auto-cel" src="images/auto_cel.svg" alt="UTP">
+                        <img id="peru-ciudad" src="images/peru_ciudad.svg" alt="UTP">
+                    </div>
+                    <div class="col-12 col-md-12 text-center d-none d-md-flex pt-5">
+                        <div class="banda_aseguradoras row">
+                            <div class="col logo_banda">
+                                <img src="images/formulas/formula1.png" alt="Formula 1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+
+            <div id="top-right-section" class="col-12 col-md-6 pl-4 pr-3 pb-4 p-md-0 pr-md-3">
+                <div class="aux-card-box">
+                    <form id="cotizador" class="row g-3" method="post" action="corrida.jsp">
+                        <div class="fillerH-x1 hidden-md hidden-lg hidden-xl"></div>
+                        <div class="col-12 mb-3">
+                            <h3 id="titulo-formulario" class="sm-text-center md-text-center lg-text-center mt-2">Completa el formulario y obten tu cronograma al instante</h3>
+                        </div>
+                        <div class="col-12 col-md-6 ml-3 ml-md-0">
+                            <div class="row">
+                                <!--
+                                <div class="col-12">
+                                    <h3 id="titulo-datos-vehiculo" class="sm-text-center">DATOS DEL VEHÍCULO</h3>
+                                </div>
+                                -->
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Tipo de Auto:</span></div>
+                                    <select id="tipo_auto" name="tipo_auto" class="form-select col-12 col-md-8" required="">
+                                        <option value="N" selected>Nuevo</option>
+                                        <option value="U">Usado</option>
+                                        <option value="T">Taxi</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Valor del Auto:</span></div>
+                                    <div>
+                                        <input id="valor_auto" type="text" class="input-text-hidden long" value="S/. 30000">
+                                    </div>
+                                    <input id="r_valor_auto" name="r_valor_auto" type="range" class="form-range col-12 col-md-8" required="" min="3000" max="200000" step="1000" value="30000" onchange="changeValorValue(this.value);">
+                                </div>
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Plazo:</span></div>
+                                    <div>
+                                        <input id="valor_plazo" type="text" class="input-text-hidden long" value="12 meses">
+                                    </div>
+                                    <input id="r_valor_plazo" name="r_valor_plazo" type="range" class="form-range col-12 col-md-8" required="" min="3" max="60" step="1" value="12" onchange="changePlazoValue(this.value);">
+                                </div>
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Ubicación:</span></div>
+                                    <select id="ubicacion" name="ubicacion" class="form-select col-12 col-md-8" required="">
+                                        <option value="L" selected>Lima</option>
+                                        <option value="P">Provincias</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 ml-3 ml-md-0">
+                            <div class="row">
+                                <!--
+                                <div class="col-12">
+                                    <h3 id="titulo-datos-conductor" class="sm-text-center">DATOS DEL CONDUCTOR</h3>
+                                </div>
+                                -->
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Moneda:</span></div>
+                                    <select id="moneda" name="moneda" class="form-select col-12 col-md-8" required="">
+                                      <option value="S" selected>Soles</option>
+                                      <option value="D">Dólares</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Cuota Inicial:</span></div>
+                                    <div>
+                                        <input id="valor_cuota" type="text" class="input-text-hidden long" value="20%">
+                                    </div>
+                                    <input id="r_valor_cuota" name="r_valor_cuota" type="range" class="form-range" required="" min="0" max="100" step="1" value="20" onchange="changeCuotaValue(this.value);">
+                                </div>
+
+                                <div class="col-12 row form-group">
+                                    <div class="label"><span class="form-label">Ingresos:</span></div>
+                                    <div>
+                                        <input id="valor_ingresos" type="text" class="input-text-hidden long" value="S/. 4000">
+                                    </div>
+                                    <input id="r_valor_ingresos" name="r_valor_ingresos" type="range" class="form-range col-12 col-md-8" required="" min="500" max="200000" step="100" value="4000" onchange="changeIngresosValue(this.value);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mb-3 text-center">
+                            <button id="cotizador_submit" type="submit" class="btn btn-danger btn-lg btn-block">Calcular y obtener cronograma</button>
+                        </div>
+
+                        <div class="container-loader">
+                            <div class="loader"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-12 col-md-12 text-center d-flex d-md-none pt-4">
+                    <div class="banda_aseguradoras row">
+                        <div class="col logo_banda">
+                            <img src="images/formulas/formula1.png" alt="Formula 1">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="overlay"></div>
+        </div>
+        
         <script type="text/javascript">
             function changePlazoValue(val) {
-                document.getElementById("value_plazo").value = val + " meses";
+                document.getElementById("valor_plazo").value = val + " meses";
             }
             
             function changeCuotaValue(val) {
-                document.getElementById("value_cuota").value = val + "%";
+                document.getElementById("valor_cuota").value = val + "%";
             }
             
             function changeValorValue(val) {
-                document.getElementById("value_valor").value = "S/. " + val;
+                document.getElementById("valor_auto").value = "S/. " + val;
             }
             
             function changeIngresosValue(val) {
-                document.getElementById("value_ingresos").value = "S/. " + val;
+                document.getElementById("valor_ingresos").value = "S/. " + val;
             }
         </script>
     </body>

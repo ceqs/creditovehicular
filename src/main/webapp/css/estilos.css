@@ -1,0 +1,109 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 8, 2022, 8:09:59 AM
+    Author     : ceqs
+*/
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#cotizador_submit {
+    border-radius: 0.5rem;
+    width: auto;
+    margin: 0 auto;
+    padding: 1rem 4rem;
+}
+
+.aux-card-box {
+    border-radius: 0.5rem;
+    box-shadow: 2px 4px 15px rgb(0 58 99 / 20%);
+    padding: 1rem;
+    flex: 1;
+}
+
+#titulo-formulario, .aux-texto-rojo {
+    color: #ec0044;
+}
+
+.lg-text-center {
+    text-align: center;
+}
+
+input[type="text"].input-text-hidden:not(#edit-search) {
+    border: 0;
+    padding: 0;
+    margin-top: -10px;
+    -webkit-appearance: none;
+    background: #fff;
+}
+
+input[type="text"]:not(#edit-search), input[type="email"], input[type="number"], input[type="date"], input[type="file"], .search-autocomplete-container {
+    border-radius: 24px;
+    border: 1px solid #ff6162;
+    color: #00cacc;
+    text-align: center;
+    display: block;
+    padding: 0.375rem 1rem;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+.label {
+    text-align: center;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    font-weight: 100;
+}
+
+.form-group {
+    margin: 10px auto 10px auto;
+}
+
+#auto-cel {
+    float: left;
+    width: 55%;
+}
+
+#peru-ciudad {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 75%;
+}
+
+.align-self-end {
+    position: relative;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+#logo-ss-header, #logo-ss-header-contraste {
+    height: 3rem;
+}
+
+.logo_banda img {
+    height: 2rem;
+    filter: grayscale(100%) opacity(50%);
+    -webkit-filter: grayscale(100%) opacity(50%);
+    -moz-filter: grayscale(100%) opacity(50%);
+}
+
+.logo_banda img {
+    width: 100%;
+}
