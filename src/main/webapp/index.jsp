@@ -55,6 +55,10 @@
                         <img id="peru-ciudad" src="images/peru_ciudad.svg" alt="UTP">
                     </div>
                     <div class="col-12 col-md-12 text-center d-none d-md-flex pt-5">
+                        <h5>Formulas:</h5>
+                    </div>
+                    <div class="col-12 col-md-12 text-center d-none d-md-flex">
+                        <br>
                         <div class="banda_formulas row">
                             <div class="col logo_banda">
                                  <img src="images/formulas/tem.svg" alt="TEM">
@@ -67,7 +71,7 @@
                              </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 text-center d-none d-md-flex pt-5">
+                    <div class="col-12 col-md-12 text-center d-none d-md-flex">
                         <div class="banda_formulas row">
                             <div class="col logo_banda">
                                 <img src="images/formulas/interes.svg" alt="INTERES">
@@ -194,8 +198,10 @@
                         </div>
                     </form>
                 </div>
-
                 <div class="col-12 col-md-12 text-center d-flex d-md-none pt-4">
+                    <h5>Formulas:</h5>
+                </div>
+                <div class="col-12 col-md-12 text-center d-flex d-md-none">
                     <div class="banda_formulas row">
                         <div class="col logo_banda">
                              <img src="images/formulas/tem.svg" alt="TEM">
@@ -209,7 +215,7 @@
                     </div>
                 </div>
                 
-                <div class="col-12 col-md-12 text-center d-flex d-md-none pt-4">
+                <div class="col-12 col-md-12 text-center d-flex d-md-none">
                     <div class="banda_formulas row">
                         <div class="col logo_banda">
                             <img src="images/formulas/interes.svg" alt="INTERES">
