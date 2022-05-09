@@ -48,7 +48,9 @@
                         <h1 class="aux-texto-azul">Calcula tu crédito vehicular y obten toda la información sobre el calculo de cuotas</h1>
                     </div>
                     <div class="col-12 text-center text-md-left">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Usa nuestra calculadora de crédito vehicular y descubre el pago mensual de tu nuevo auto a crédito. Nuestra aplicación permitirá calcular el préstamo, de inmediato y sin necesidad de conocer de fórmulas financieras, presentando
+                            la información de forma clara y entendible para nuestros usuarios. Al mismo tiempo, permitirá comparar distintas opciones de
+                            préstamos de las principales entidades financieras rápidamente y de manera concisa.</p>
                     </div>
                     <div class="d-none d-md-block col-md-12 text-center align-self-end">
                         <img id="auto-cel" src="images/auto_cel.svg" alt="UTP">
@@ -86,7 +88,8 @@
 
             <div id="top-right-section" class="col-12 col-md-6 pl-4 pr-3 pb-4 p-md-0 pr-md-3">
                 <div class="aux-card-box">
-                    <form id="cotizador" class="row g-3" method="post" action="corrida.jsp">
+                    <form id="cotizador" class="row g-3" method="post" action="calcular">
+                        <input type="hidden" name="opc" value="1">
                         <div class="fillerH-x1 hidden-md hidden-lg hidden-xl"></div>
                         <div class="col-12 mb-3">
                             <h3 id="titulo-formulario" class="sm-text-center md-text-center lg-text-center mt-2">Completa el formulario y obten tu cronograma al instante</h3>
@@ -126,7 +129,7 @@
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">TEA:</span></div>
                                     <div class="input-group mb-3">
-                                        <input id="tea" name="tea" type="number" class="form-control col-12 col-md-8" required="" min="1.00" max="100.00" step="0.01" value="7.00">
+                                        <input id="tea" name="tea" type="number" class="form-control col-12 col-md-8" required="" value="7.00" step="0.01" min="1.00" max="100">
                                         <span class="input-group-text">%</span>
                                     </div>
                                 </div>
@@ -134,7 +137,7 @@
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Seguro desgravamen:</span></div>
                                     <div class="input-group mb-3">
-                                        <input id="desgravamen" name="desgravamen" type="number" class="form-control col-12 col-md-8" required="" min="0.01" max="10.00" value="0.05">
+                                        <input id="desgravamen" name="desgravamen" type="number" class="form-control col-12 col-md-8" required="" value="0.050" step="0.001" min="0.001" max="5.000">
                                         <span class="input-group-text">%</span>
                                     </div>
                                 </div>
@@ -174,7 +177,7 @@
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Comisión</span></div>
                                     <div class="input-group mb-3">
-                                        <input id="comision" name="comision" type="number" class="form-control col-12 col-md-8" required="" min="1.00" max="100.00" value="4.00">
+                                        <input id="comision" name="comision" type="number" class="form-control col-12 col-md-8" required="" step="0.01" value="4.00">
                                         <span class="input-group-text">#</span>
                                     </div>
                                 </div>

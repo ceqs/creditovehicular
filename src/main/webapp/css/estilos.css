@@ -117,3 +117,17 @@ footer * {
     height: 3rem;
     padding-bottom: 10px;
 }
+
+.div-cronograma {
+    padding: 10px;
+    border: solid #dee2e6;
+    border-width: 1px;
+}
+
+.col-12 h3 {
+    padding-top: 20px;
+}
+
+.mb-3 {
+    margin-bottom: 0rem!important;
+}
