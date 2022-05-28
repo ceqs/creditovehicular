@@ -5,6 +5,7 @@
     Author     : U20100058 - Marco Schenone
 --%>
 
+<%@page import="com.utp.integrador.credito.vehicular.model.Banco"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="com.utp.integrador.credito.vehicular.model.Cuota"%>
 <%@page import="java.util.List"%>
@@ -183,42 +184,20 @@
                 <h3>Comparación de ofertas de tasas:</h3>
             </div>
             <div class="row row-cols-1 row-cols-md-3 g-4">
+            <%
+                List<Banco> bancos = (List<Banco>)request.getAttribute("bancos");
+                for(Banco banco : bancos) {
+            %>
               <div class="col">
                 <div class="card">
-                  <img src="images/bancos/bcp.svg" class="card-img-top" alt="bcp">
+                  <img src="<%=banco.getLogo()%>" class="card-img-top" alt="<%=banco.getNombre()%>">
                   <div class="card-body">
-                    <h5 class="card-title">Banco de credito del Perú</h5>
-                    <p class="card-text">BCP ofrece una tasa desde el <b>8.00%</b> anual.</p>
+                    <h5 class="card-title"><%=banco.getNombre()%></h5>
+                    <p class="card-text"><%=banco.getDescripcion()%></p>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="card">
-                    <img src="images/bancos/scotiabank.jpeg" class="card-img-top" alt="scotiabank">
-                  <div class="card-body">
-                    <h5 class="card-title">Scotiabank</h5>
-                    <p class="card-text">Scotiabank ofrece una tasa desde el <b>8.50%</b> anual.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="images/bancos/bbva.svg" class="card-img-top" alt="bbva">
-                  <div class="card-body">
-                    <h5 class="card-title">BBVA</h5>
-                    <p class="card-text">BBVA ofrece una tasa desde el <b>9.00%</b> anual.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="images/bancos/banbif.svg" class="card-img-top" alt="banbif">
-                  <div class="card-body">
-                    <h5 class="card-title">Banbif</h5>
-                    <p class="card-text">Banbif ofrece una tasa desde el <b>9.50%</b> anual.</p>
-                  </div>
-                </div>
-              </div>
+            <%}%>
             </div>
         </div>
     </body>

@@ -26,7 +26,7 @@ public class BancoService {
         Banco scotiabank = new Banco();
         scotiabank.setNombre("Scotiabank");
         scotiabank.setTasa(8.50);
-        scotiabank.setLogo("images/bancos/bcp.svg");
+        scotiabank.setLogo("images/bancos/scotiabank.jpeg");
         scotiabank.setDescripcion("Scotiabank ofrece una tasa desde el <b>" + scotiabank.getTasa() + "%</b> anual.");
         lsBancos.add(scotiabank);
         

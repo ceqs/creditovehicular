@@ -1,5 +1,6 @@
 package com.utp.integrador.credito.vehicular.controller;
 
+import com.utp.integrador.credito.vehicular.controller.services.BancoService;
 import com.utp.integrador.credito.vehicular.controller.services.CalcularService;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -80,6 +81,17 @@ public class CalculoController extends HttpServlet {
         
         request.setAttribute("moneda", moneda);
         request.setAttribute("cuotas", services.calcularCuotas(costoAuto, plazo, tea, desgravamen, moneda, inicial, ingresos, comision));
+        
+        /*
+        Invocamos a la rutina de obtención de bancos
+        */
+        
+        BancoService bancoServices = new BancoService();
+        request.setAttribute("bancos", bancoServices.listarBancos());
+        
+        /*
+        Mostramos el jsp del resultado
+        */
         request.getRequestDispatcher("/corrida.jsp").forward(request, response);
     }
 
