@@ -8,12 +8,9 @@ package com.utp.integrador.credito.vehicular.controller;
 
 
 import com.utp.integrador.credito.vehicular.controller.services.CalcularService;
-import com.utp.integrador.credito.vehicular.model.Cuota;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -80,6 +77,7 @@ public class CalculoController extends HttpServlet {
                 
         CalcularService services = new CalcularService();
         
+        request.setAttribute("moneda", moneda);
         request.setAttribute("cuotas", services.calcularCuotas(costoAuto, plazo, tea, desgravamen, moneda, inicial, ingresos, comision));
         request.getRequestDispatcher("/corrida.jsp").forward(request, response);
     }

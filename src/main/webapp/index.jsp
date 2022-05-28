@@ -113,23 +113,23 @@
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Valor del Auto:</span></div>
                                     <div>
-                                        <input id="valor_auto" type="text" class="input-text-hidden long" value="S/. 30000">
+                                        <input id="valor_auto" type="text" class="input-text-hidden long" value="15000">
                                     </div>
-                                    <input id="r_valor_auto" name="r_valor_auto" type="range" class="form-range col-12 col-md-8" required="" min="3000" max="200000" step="1000" value="30000" onchange="changeValorValue(this.value);">
+                                    <input id="r_valor_auto" name="r_valor_auto" type="range" class="form-range col-12 col-md-8" required="" min="3000" max="200000" step="1000" value="15000" onchange="changeValorValue(this.value);">
                                 </div>
                                 
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Plazo:</span></div>
                                     <div>
-                                        <input id="valor_plazo" type="text" class="input-text-hidden long" value="12 meses">
+                                        <input id="valor_plazo" type="text" class="input-text-hidden long" value="36 meses">
                                     </div>
-                                    <input id="r_valor_plazo" name="r_valor_plazo" type="range" class="form-range col-12 col-md-8" required="" min="3" max="60" step="1" value="12" onchange="changePlazoValue(this.value);">
+                                    <input id="r_valor_plazo" name="r_valor_plazo" type="range" class="form-range col-12 col-md-8" required="" min="3" max="60" step="1" value="36" onchange="changePlazoValue(this.value);">
                                 </div>
                                 
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">TEA:</span></div>
                                     <div class="input-group mb-3">
-                                        <input id="tea" name="tea" type="number" class="form-control col-12 col-md-8" required="" value="7.00" step="0.01" min="1.00" max="100">
+                                        <input id="tea" name="tea" type="number" class="form-control col-12 col-md-8" required="" value="16.50" step="0.01" min="1.00" max="100">
                                         <span class="input-group-text">%</span>
                                     </div>
                                 </div>
@@ -153,8 +153,8 @@
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Moneda:</span></div>
                                     <select id="moneda" name="moneda" class="form-select col-12 col-md-8" required="">
-                                      <option value="S" selected>Soles</option>
-                                      <option value="D">Dólares</option>
+                                      <option value="S">Soles</option>
+                                      <option value="D" selected>Dólares</option>
                                     </select>
                                 </div>
 
@@ -269,7 +269,7 @@
             }
             
             function changeValorValue(val) {
-                document.getElementById("valor_auto").value = "S/. " + val;
+                document.getElementById("valor_auto").value = val;
             }
             
             function changeIngresosValue(val) {

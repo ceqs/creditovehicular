@@ -153,17 +153,18 @@
                         <%
                             DecimalFormat df = new DecimalFormat("0.00");
                             List<Cuota> cuotas = (List<Cuota>)request.getAttribute("cuotas");
+                            String moneda = (((String)request.getAttribute("moneda")).equals("D")? "$": "S/.");
                             for(Cuota cuota : cuotas) {
                         %>
                         <tr>
                             <td><%=cuota.getNumero()%></td>
-                            <td>$<%=df.format(cuota.getCapital())%></td>
-                            <td>$<%=df.format(cuota.getInteres())%></td>
-                            <td>$<%=df.format(cuota.getAmortizacion())%></td>
-                            <td>$<%=df.format(cuota.getComision())%></td>
-                            <td>$<%=df.format(cuota.getDesgravamen())%></td>
+                            <td><%=moneda%><%=df.format(cuota.getCapital())%></td>
+                            <td><%=moneda%><%=df.format(cuota.getInteres())%></td>
+                            <td><%=moneda%><%=df.format(cuota.getAmortizacion())%></td>
+                            <td><%=moneda%><%=df.format(cuota.getComision())%></td>
+                            <td><%=moneda%><%=df.format(cuota.getDesgravamen())%></td>
                             <td>$<%=df.format(cuota.getPagoDolares())%></td>
-                            <td>$<%=df.format(cuota.getPagoSoles())%></td>
+                            <td>S/.<%=df.format(cuota.getPagoSoles())%></td>
                         </tr>
                         <%
                             }
