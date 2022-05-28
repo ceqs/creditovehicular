@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.utp.integrador.credito.vehicular.model;
 
 /**
- *
- * @author ceqs
+ * Curso Integrador 1: Sistemas y Software
+ * @author U20101684 - Carlos Quispe Salazar
+ * @author U20100058 - Marco Schenone
  */
 public class Cuota {
     private int numero;

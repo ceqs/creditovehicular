@@ -1,7 +1,8 @@
 <%-- 
     Document   : index.jsp
     Created on : Apr 29, 2022, 10:09:38 PM
-    Author     : ceqs
+    Author     : U20101684 - Carlos Quispe Salazar
+    Author     : U20100058 - Marco Schenone
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

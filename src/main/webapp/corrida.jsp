@@ -1,7 +1,8 @@
 <%-- 
     Document   : corrida.jsp
     Created on : May 6, 2022, 9:32:12 PM
-    Author     : ceqs
+    Author     : U20101684 - Carlos Quispe Salazar
+    Author     : U20100058 - Marco Schenone
 --%>
 
 <%@page import="java.text.DecimalFormat"%>
@@ -40,6 +41,13 @@
             </div>
         </header>
         <div id="top-section" class="row position-relative pb-0 pb-md-4 mx-md-0">
+            <%
+                String moneda = (((String)request.getAttribute("moneda")).equals("D")? "$": "S/.");
+                String desMoneda = (((String)request.getAttribute("moneda")).equals("D")? "Dólares": "Soles");
+                String desUbicacion = (((String)request.getParameter("ubicacion")).equals("L")? "Lima": "Provincia");
+                String tipo = (String)request.getParameter("tipo_auto");
+                String desTipo = (tipo.equals("N")? "Nuevo": (tipo.equals("U") ? "Usado" : "Taxi"));
+            %>
             
             <div class="col-12 pl-4 pr-3 pb-4 p-md-0 pr-md-3 text-center">
                 <div class="aux-card-box">
@@ -52,21 +60,21 @@
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Tipo de Auto:</span></div>
                                     <div>
-                                        <input type="text" class="input-text-hidden long" value="Nuevo">
+                                        <input type="text" class="input-text-hidden long" value="<%=desTipo%>">
                                     </div>
                                 </div>
                                 
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Plazo:</span></div>
                                     <div>
-                                        <input id="valor_plazo" type="text" class="input-text-hidden long" value="36 meses">
+                                        <input id="valor_plazo" type="text" class="input-text-hidden long" value="<%=request.getParameter("r_valor_plazo")%> meses">
                                     </div>
                                 </div>
                                 
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Valor del Auto:</span></div>
                                     <div>
-                                        <input id="valor_auto" type="text" class="input-text-hidden long" value="$ 15000">
+                                        <input id="valor_auto" type="text" class="input-text-hidden long" value="<%=moneda%> <%=request.getParameter("r_valor_auto")%>">
                                     </div>
                                 </div>
                             </div>
@@ -76,21 +84,21 @@
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Moneda:</span></div>
                                     <div>
-                                        <input type="text" class="input-text-hidden long" value="Dólares">
+                                        <input type="text" class="input-text-hidden long" value="<%=desMoneda%>">
                                     </div>
                                 </div>
 
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Ingresos:</span></div>
                                     <div>
-                                        <input id="valor_ingresos" type="text" class="input-text-hidden long" value="S/. 4000">
+                                        <input id="valor_ingresos" type="text" class="input-text-hidden long" value="S/. <%=request.getParameter("r_valor_ingresos")%>">
                                     </div>
                                 </div>
                                 
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Cuota Inicial:</span></div>
                                     <div>
-                                        <input id="valor_cuota" type="text" class="input-text-hidden long" value="20%">
+                                        <input id="valor_cuota" type="text" class="input-text-hidden long" value="<%=request.getParameter("r_valor_cuota")%>%">
                                     </div>
                                 </div>
                             </div>
@@ -100,14 +108,14 @@
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Seguro desgravamen:</span></div>
                                     <div>
-                                        <input type="text" class="input-text-hidden long" value="0.050%">
+                                        <input type="text" class="input-text-hidden long" value="<%=request.getParameter("desgravamen")%>%">
                                     </div>
                                 </div>
                                 
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">TEA:</span></div>
                                     <div>
-                                        <input type="text" class="input-text-hidden long" value="16.5%">
+                                        <input type="text" class="input-text-hidden long" value="<%=request.getParameter("tea")%>%">
                                     </div>
                                 </div>
                             </div>
@@ -117,14 +125,14 @@
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Ubicación:</span></div>
                                     <div>
-                                        <input type="text" class="input-text-hidden long" value="Lima">
+                                        <input type="text" class="input-text-hidden long" value="<%=desUbicacion%>">
                                     </div>
                                 </div>
                                 
                                 <div class="col-12 row form-group">
                                     <div class="label"><span class="form-label">Comisión</span></div>
                                     <div>
-                                        <input type="text" class="input-text-hidden long" value="$ 4.05">
+                                        <input type="text" class="input-text-hidden long" value="<%=moneda%> <%=request.getParameter("comision")%>">
                                     </div>
                                 </div>
                             </div>
@@ -153,12 +161,11 @@
                         <%
                             DecimalFormat df = new DecimalFormat("0.00");
                             List<Cuota> cuotas = (List<Cuota>)request.getAttribute("cuotas");
-                            String moneda = (((String)request.getAttribute("moneda")).equals("D")? "$": "S/.");
                             for(Cuota cuota : cuotas) {
                         %>
                         <tr>
                             <td><%=cuota.getNumero()%></td>
-                            <td><%=moneda%><%=df.format(cuota.getCapital())%></td>
+                            <td><%=moneda%><%=(cuota.getCapital() <= 0 ? df.format(0) : df.format(cuota.getCapital()))%></td>
                             <td><%=moneda%><%=df.format(cuota.getInteres())%></td>
                             <td><%=moneda%><%=df.format(cuota.getAmortizacion())%></td>
                             <td><%=moneda%><%=df.format(cuota.getComision())%></td>

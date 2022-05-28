@@ -1,12 +1,5 @@
 package com.utp.integrador.credito.vehicular.controller;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 import com.utp.integrador.credito.vehicular.controller.services.CalcularService;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,8 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author ceqs
+ * Curso Integrador 1: Sistemas y Software
+ * @author U20101684 - Carlos Quispe Salazar
+ * @author U20100058 - Marco Schenone
  */
 @WebServlet(name = "CalculoController", urlPatterns = {"/calcular"})
 public class CalculoController extends HttpServlet {
@@ -64,6 +58,10 @@ public class CalculoController extends HttpServlet {
             }
         }
         
+        /*
+        Capturamos los valores que ingresa por la interface.
+        */
+        
         String tipoAuto = request.getParameter("tipo_auto");
         double costoAuto = Double.parseDouble(request.getParameter("r_valor_auto"));
         int plazo = Integer.parseInt(request.getParameter("r_valor_plazo"));
@@ -74,7 +72,10 @@ public class CalculoController extends HttpServlet {
         int ingresos = Integer.parseInt(request.getParameter("r_valor_ingresos"));
         double comision = Double.parseDouble(request.getParameter("comision"));
         
-                
+        
+        /*
+        Invocamos a la rutina de calculo.
+        */
         CalcularService services = new CalcularService();
         
         request.setAttribute("moneda", moneda);
