@@ -57,6 +57,9 @@ public class CalcularService {
         return lsCuotas;
     }
     
+    /*
+    La función TEM cálcula de la Tasa de interés efectiva mensual.
+    */
     static public double tem(double tea, double periodo) {
         double tem = (Math.pow((1+(tea/100)),(periodo/360))-1)*100;
         return tem;
