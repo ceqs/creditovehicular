@@ -1,4 +1,4 @@
-package com.utp.integrador.credito.vehicular.controller.services;
+package com.utp.integrador.credito.vehicular.services;
 
 import com.utp.integrador.credito.vehicular.model.Banco;
 import java.util.ArrayList;

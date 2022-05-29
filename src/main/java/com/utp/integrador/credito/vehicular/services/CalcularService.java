@@ -1,4 +1,4 @@
-package com.utp.integrador.credito.vehicular.controller.services;
+package com.utp.integrador.credito.vehicular.services;
 
 import com.utp.integrador.credito.vehicular.model.Cuota;
 import java.util.ArrayList;
@@ -13,7 +13,8 @@ public class CalcularService {
     public final static int DAYS_MONTH = 30;
     public final static double DOLAR_CHANGE = 3.66;
     
-    public List<Cuota> calcularCuotas(double costoAuto, int plazo, double tea, double desgravamen, String moneda, int inicial, int ingresos, double comision) {
+    public List<Cuota> calcularCuotas(double costoAuto, int plazo, double tea, double 
+            desgravamen, String moneda, int inicial, int ingresos, double comision) {
         
         double tem = tem(tea, DAYS_MONTH);
         double capital = costoAuto - ((costoAuto * inicial) / 100);
